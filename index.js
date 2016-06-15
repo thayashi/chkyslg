@@ -49,7 +49,7 @@ function lodge_check() {
 }
 
 
-const task = cron.schedule('*/5 * * * *', function() {
+const task = cron.schedule('*/10 * * * *', function() {
   var of_inn = new lodge_check();
   of_inn.title = 'Old Faithful Inn';
   of_inn.url = 'https://ynpres1.xanterra.com/cgi-bin/lansaweb?procfun+rn+resnet+RES+funcparms+UP(A2560):;OISUM6;071216;2;2;2;010;?/';
@@ -68,7 +68,7 @@ const task = cron.schedule('*/5 * * * *', function() {
   of_l.scrape();
   of_snow.scrape();
   var date = new Date();
-  console.log('running a task every 5 minutes : ' + date.toLocaleString());
+  console.log('running a task every 10 minutes : ' + date.toLocaleString());
 });
 
 task.start();
